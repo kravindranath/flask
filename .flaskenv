@@ -1,0 +1,4 @@
+#.flaskenv
+FLASK_APP=webapp
+FLASK_DEBUG=True
+FLASK_RUN_PORT=5000
