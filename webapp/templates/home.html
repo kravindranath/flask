@@ -1,12 +1,21 @@
-<!DOCTYPE html5>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>flask app</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tailwind/3.3.1/output.css')}}" />
-    </head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<h1>My First Headings</h1>
+    <title>Tailwind CSS Boilerplate</title>
 
-</body>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tailwind/3.3.1/main.min.css')}}" />
+</head>
+
+  <body class="py-16 bg-gray-200">
+    <h1 class="mb-4 text-4xl text-center text-gray-800 font-bold font-sans">
+      Tailwind CSS Boilerplate
+    </h1>
+    <p class="text-sm text-center text-gray-600 font-sans">
+      Get started by editing index.html
+    </p>
+  </body>
 </html>
