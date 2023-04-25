@@ -9,10 +9,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tailwind/3.3.1/main.min.css')}}" />
 </head>
-<body class="bg-gray-100">
+<body class="bg-beige">
   <div class="container mx-auto px-0 max-w-full">
     <!-- Header start -->
-    <div class="grid grid-cols-12 flex-1 flex-wrap justify-start bg-white drop-shadow-sm py-2 mb-4">
+    <div class="grid grid-cols-16 flex-1 flex-wrap justify-start bg-white drop-shadow-sm py-2">
       <div class="flex flex-row justify-start col-span-2 pl-4">
         <div class="mr-2">
           <img src="static/images/logo.png" class="w-9" />
@@ -24,20 +24,64 @@
       <!-- Main content start -->
       <div class="col-span-10 ml-4">
         <nav class="flex-no-wrap relative">
-          <ul class="flex flex-row justify-start">
-            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md bg-gray-100" href="#">Home</a></li>
-            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md bg-gray-100" href="#">About</a></li>
-            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md bg-gray-100" href="#">Contact</a></li>
+          <ul class="flex flex-row justify-start text-sm">
+            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md border border-gray-200" href="#">Home</a></li>
+            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md border border-gray-200" href="#">About</a></li>
+            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md border border-gray-200" href="#">Contact</a></li>
           </ul>
         </nav>          
       </div>
     </div>
-    <div class="grid grid-cols-12 flex-1 flex-wrap justify-start">
-      <div class="flex flex-column col-span-2">
-        Menu
+    <div class="grid grid-cols-16 flex-1 flex-wrap justify-start relative">
+      <div class="flex flex-column col-span-2 mx-4 my-4 rounded-lg h-screen">
+        <aside id="default-sidebar" class="w-full" aria-label="Sidebar">
+          <div class="h-full bg-gray-50 dark:bg-gray-800">
+             <ul class="flex flex-col text-sm">
+                <li>
+                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
+                     <span class="ml-3">Dashboard</span>
+                   </a>
+                </li>
+                <li>
+                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
+                     <span class="flex-1 ml-3 whitespace-nowrap">Kanban</span>
+                   </a>
+                </li>
+                <li>
+                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
+                     <span class="flex-1 ml-3 whitespace-nowrap">Inbox</span>
+                   </a>
+                </li>
+                <li>
+                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
+                     <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
+                   </a>
+                </li>
+                <li>
+                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
+                     <span class="flex-1 ml-3 whitespace-nowrap">Products</span>
+                   </a>
+                </li>
+                <li>
+                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
+                     <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+                   </a>
+                </li>
+                <li>
+                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
+                     <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                   </a>
+                </li>
+             </ul>
+          </div>
+       </aside>
       </div>
-      <div class="flex flex-row col-span-10">
-        Main content
+      <div class="flex flex-column col-span-14 mt-4 mr-4 p-4 rounded-lg h-screen bg-white ">
+        <div class="flex flex-row flex-1">
+            <div>one</div>
+            <div>one</div>
+            <div>one</div>
+        </div>
       </div>
     </div>
       <!-- Footer start -->
