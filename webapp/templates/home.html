@@ -25,9 +25,13 @@
       <div class="col-span-10 ml-4">
         <nav class="flex-no-wrap relative">
           <ul class="flex flex-row justify-start text-sm">
-            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md border border-gray-200" href="#">Home</a></li>
-            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md border border-gray-200" href="#">About</a></li>
-            <li class="mr-4 inline-block py-2"><a class="px-4 py-2 rounded-md border border-gray-200" href="#">Contact</a></li>
+            {% for (text, path) in main_navigation.items() %}
+                  <li class="mr-4 inline-block py-2">
+                    <a class="px-4 py-2 rounded-md border border-gray-200" href="{{path}}">
+                      {{text}}
+                    </a>
+                  </li>
+            {% endfor %}
           </ul>
         </nav>          
       </div>
@@ -37,41 +41,13 @@
         <aside id="default-sidebar" class="w-full" aria-label="Sidebar">
           <div class="h-full bg-gray-50 dark:bg-gray-800">
              <ul class="flex flex-col text-sm">
-                <li>
-                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
-                     <span class="ml-3">Dashboard</span>
-                   </a>
-                </li>
-                <li>
-                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
-                     <span class="flex-1 ml-3 whitespace-nowrap">Kanban</span>
-                   </a>
-                </li>
-                <li>
-                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
-                     <span class="flex-1 ml-3 whitespace-nowrap">Inbox</span>
-                   </a>
-                </li>
-                <li>
-                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
-                     <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
-                   </a>
-                </li>
-                <li>
-                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
-                     <span class="flex-1 ml-3 whitespace-nowrap">Products</span>
-                   </a>
-                </li>
-                <li>
-                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
-                     <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-                   </a>
-                </li>
-                <li>
-                   <a href="#" class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm">
-                     <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
-                   </a>
-                </li>
+                {% for (text, path) in sidebar_navigation.items() %}
+                  <li>
+                    <a class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm" href={{path}}>
+                      <span class="ml-3">{{text}}</span>
+                    </a>
+                  </li>
+                {% endfor %}
              </ul>
           </div>
        </aside>
