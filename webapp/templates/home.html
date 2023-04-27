@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tailwind/3.3.1/main.min.css')}}" />
 </head>
-<body class="bg-beige">
+<body class="bg-deep-purple">
   <div class="container mx-auto px-0 max-w-full">
     <!-- Header start -->
     <div class="grid grid-cols-16 flex-1 flex-wrap justify-start bg-white drop-shadow-sm py-2">
@@ -27,7 +27,7 @@
           <ul class="flex flex-row justify-start text-sm">
             {% for (text, path) in main_navigation.items() %}
                   <li class="mr-4 inline-block py-2">
-                    <a class="px-4 py-2 rounded-md border border-gray-200" href="{{path}}">
+                    <a class="px-4 py-2 rounded-2xl bg-gray-100 hover:bg-light-deep-purple hover:text-white " href="{{path}}">
                       {{text}}
                     </a>
                   </li>
@@ -37,13 +37,13 @@
       </div>
     </div>
     <div class="grid grid-cols-16 flex-1 flex-wrap justify-start relative">
-      <div class="flex flex-column col-span-2 mx-4 my-4 rounded-lg h-screen">
+      <div class="flex flex-column col-span-2 mx-3 my-4 rounded-lg h-screen">
         <aside id="default-sidebar" class="w-full" aria-label="Sidebar">
           <div class="h-full bg-gray-50 dark:bg-gray-800">
              <ul class="flex flex-col text-sm">
                 {% for (text, path) in sidebar_navigation.items() %}
                   <li>
-                    <a class="flex items-center p-2 text-black dark:text-white hover:bg-beige-dark hover:text-black rounded-sm" href={{path}}>
+                    <a class="flex items-center p-2 text-white dark:text-white hover:bg-light-deep-purple hover:text-white  rounded-2xl" href={{path}}>
                       <span class="ml-3">{{text}}</span>
                     </a>
                   </li>
@@ -52,11 +52,27 @@
           </div>
        </aside>
       </div>
-      <div class="flex flex-column col-span-14 mt-4 mr-4 p-4 rounded-lg h-screen bg-white ">
-        <div class="flex flex-row flex-1">
-            <div>one</div>
-            <div>one</div>
-            <div>one</div>
+      <div class="flex flex-column col-span-14 mt-4 mr-4 p-4 rounded-lg bg-white ">
+        <div class="flex basis-full">
+          <table class="table-auto text-left w-full table border-0">
+            <thead>
+              <tr>
+                {% for (header) in table_headers %}
+                  <th class="py-1 px-2 capitalize bg-deep-purple text-white font-normal">{{ header }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for (row) in table_data %}
+                  <tr class="odd:bg-gray-100 border-b-gray-200 border">
+                    {% for (header) in table_headers %}
+                      <td class="py-1 px-2 text-sm">{{ row[header] or '-' }}</td>
+                    {% endfor %}
+                  </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
         </div>
       </div>
     </div>

@@ -12,6 +12,8 @@ module.exports = {
       'beige': '#fcf8e3',
       'beige-dark': '#efead1',
       'purple': '#5a287d',
+      'deep-purple': '#370f4a',
+      'light-deep-purple': '#462058',
       'red': '#b21f2d',
       'yellow': '#fbbb21',
       'gray': {
