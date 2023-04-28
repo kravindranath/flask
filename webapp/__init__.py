@@ -5,8 +5,7 @@ import json
 
 main_navigation = {
     'Home': '/home',
-    'Login': '/home',
-    'Contact us': '/home',
+    'Logout': '/home',
 }
 
 sidebar_navigation = {
@@ -15,9 +14,14 @@ sidebar_navigation = {
     'Inbox': '/home',
     'Users': '/home',
     'Products': '/home',
-    'Sign': '/home',
-    'Sign': '/home',
+    'Support': '/home',
 }
+searchfilter = [
+    {'firstname': '', 'label': 'Firstname'},
+    {'lastname': '', 'label': 'Lirstname'},
+    {'email': '', 'label': 'E-mail'},
+    {'dateofbirth': '', 'label': 'Date of birth'},
+]
 absolute_path = os.path.dirname(__file__)
 relative_path = "data\sample.json"
 full_path = os.path.join(absolute_path, relative_path)
@@ -34,7 +38,7 @@ def create_app():
             "home.html",
             main_navigation = main_navigation,
             sidebar_navigation = sidebar_navigation,
-            sample_data = sample_data,
+            searchfilter = searchfilter,
             table_headers = sample_data[0]['headers'],
             table_data = sample_data[0]['data']
         )

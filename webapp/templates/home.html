@@ -22,12 +22,12 @@
         </div>
       </div>
       <!-- Main content start -->
-      <div class="col-span-10 ml-4">
+      <div class="col-span-14 ml-4">
         <nav class="flex-no-wrap relative">
-          <ul class="flex flex-row justify-start text-sm">
+          <ul class="flex flex-row justify-end text-sm">
             {% for (text, path) in main_navigation.items() %}
                   <li class="mr-4 inline-block py-2">
-                    <a class="px-4 py-2 rounded-2xl bg-gray-100 hover:bg-light-deep-purple hover:text-white " href="{{path}}">
+                    <a class="shadow shadow-gray-200 px-4 py-2 rounded-2xl bg-gray-100 hover:bg-light-deep-purple hover:text-white " href="{{path}}">
                       {{text}}
                     </a>
                   </li>
@@ -52,27 +52,46 @@
           </div>
        </aside>
       </div>
-      <div class="flex flex-column col-span-14 mt-4 mr-4 p-4 rounded-lg bg-white ">
-        <div class="flex basis-full">
-          <table class="table-auto text-left w-full table border-0">
-            <thead>
-              <tr>
-                {% for (header) in table_headers %}
-                  <th class="py-1 px-2 capitalize bg-deep-purple text-white font-normal">{{ header }}</th>
+      <div class="flex flex-column col-span-14 mt-4 mr-4 p-4 rounded-lg bg-white">
+        <div class="flex flex-row flex-wrap">
+          <!-- form start -->
+          
+            <fieldset class="py-4 px-4 mb-4 bg-gray-200">
+              <form class="flex flex-row" action="" method="get">
+                {% for (field) in searchfilter %}
+                <div class="input-field ml-2">
+                  <label for="{{ field['firstname'] }}">{{ field['label'] }}</label>
+                  <input type="text" name="{{ field['firstname'] }}" id="{{ field['firstname'] }}">
+                </div>
                 {% endfor %}
-              </tr>
-            </thead>
-            <tbody>
-              {% for (row) in table_data %}
-                  <tr class="odd:bg-gray-100 border-b-gray-200 border">
-                    {% for (header) in table_headers %}
-                      <td class="py-1 px-2 text-sm">{{ row[header] or '-' }}</td>
-                    {% endfor %}
-                  </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+                <div class="input-field">
+                  <input type="submit" value="Search">
+                </div>
+              </form>
+            </fieldset>
+          
+          <!-- form end -->
+          <div class="flex basis-full">
+            <table class="table-auto text-left w-full table border-0">
+              <thead>
+                <tr class="border-b-gray-200 border-b">
+                  {% for (header) in table_headers %}
+                    <th class="py-1 px-2 capitalize bg-gray-100 text-black font-bold">{{ header }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for (row) in table_data %}
+                    <tr class="odd:bg-gray-100 border-b-gray-200 border-b">
+                      {% for (header) in table_headers %}
+                        <td class="py-1 px-2 text-sm">{{ row[header] or '-' }}</td>
+                      {% endfor %}
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
 
+          </div>
         </div>
       </div>
     </div>
